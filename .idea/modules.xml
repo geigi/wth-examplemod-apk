@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/wthexamplemodapk.iml" filepath="$PROJECT_DIR$/wthexamplemodapk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wth-example-mod-apk.iml" filepath="$PROJECT_DIR$/wth-example-mod-apk.iml" />
     </modules>
   </component>
 </project>

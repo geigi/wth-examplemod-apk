@@ -1,11 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="wth.hsd.de.wth_example_mod_apk">
 
-    <application
-        android:allowBackup="true"
+    <application android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme" >
+        <provider
+            android:name="wth.hsd.de.wth_example_mod_apk.WTHModProvider"
+            android:authorities="de.hsd.wth_example_mod_apk"
+            android:grantUriPermissions="true"
+            android:exported="true" />
+    </application>
 </manifest>
