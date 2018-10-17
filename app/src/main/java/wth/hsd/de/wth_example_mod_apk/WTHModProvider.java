@@ -3,43 +3,25 @@ package wth.hsd.de.wth_example_mod_apk;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
+/**
+ * NOTE: This ContentProvider is only used to discover this app!
+ * It is important that the class is named WTHModProvider, as this is the string the base game will search for.
+ * The actual "Mods" folder must be placed in the assets folder.
+ */
 public class WTHModProvider extends ContentProvider {
     private static final String LOGTAG = "wth.modprovider";
 
     @Override
     public AssetFileDescriptor openAssetFile(Uri uri, String mode ) throws FileNotFoundException
     {
-        Log.v(LOGTAG, "AssetsGetter: Open asset file");
-
-        AssetManager am = getContext( ).getAssets( );
-
-        String file_name = uri.getPath().substring(1, uri.getPath().length());
-
-        if( file_name != "Mods")
-            throw new FileNotFoundException("Only accessing the 'Mods' folder is allowed.");
-
-        AssetFileDescriptor afd = null;
-
-        try
-        {
-            afd = am.openFd( file_name );
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace( );
-        }
-
-        return afd;
+        return null;
     }
 
     @Override
