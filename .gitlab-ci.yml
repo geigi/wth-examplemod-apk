@@ -8,7 +8,7 @@ generate-android-apk:
   image: jangrewe/gitlab-ci-android
   <<: *android_before_script
   script: |
-    . <(curl -sL https://gitlab.com/morph027/gitlab-ci-helpers/raw/master/get-last-successful-build-artifact.sh)
+    curl -O https://gitlab.com/morph027/gitlab-ci-helpers/raw/master/get-last-successful-build-artifact.sh
     chmod +x get-last-successful-build-artifact.sh
     ./get-last-successful-build-artifact.sh
     ls -ahl
