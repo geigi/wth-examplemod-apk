@@ -18,7 +18,7 @@ generate-android-apk:
     rm -rf Mods/*/Linux
     rm -rf Mods/*/OSX
     rm -rf Mods/*/Windows
-    cp Mods app/src/main/assets/
+    cp -R Mods app/src/main/assets/
     ./gradlew assembleRelease
     ls -ahl
     find . -name '*.apk'
