@@ -1,0 +1,29 @@
+.android_before_script: &android_before_script
+  before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - export ANDROID_SDK_HOME=$CI_PROJECT_DIR
+  - chmod +x ./gradlew
+
+generate-android-apk:
+  image: jangrewe/gitlab-ci-android
+  <<: *android_before_script
+  script: |
+    . <(curl -sL https://gitlab.com/morph027/gitlab-ci-helpers/raw/master/get-last-successful-build-artifact.sh)
+    chmod +x get-last-successful-build-artifact.sh
+    ./get-last-successful-build-artifact.sh
+    ls -ahl
+    ./gradlew assembleRelease
+    ls -ahl
+    find . -name '*.apk'
+    ls -ahl build/outputs/apk/
+  # retry because sometimes checkingout artifacts fails
+  retry: 2
+  artifacts:
+    paths:
+    - ./build/outputs/apk/release/*.apk
+    expire_in: 1 week
+  variables:
+    BUILD_TARGET: Android
+    BASE_URL: https://git.it-sec.medien.hs-duesseldorf.de
+    PROJECT: 76
+    STAGE: build
