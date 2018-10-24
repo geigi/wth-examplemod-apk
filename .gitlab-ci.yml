@@ -28,3 +28,4 @@ generate-android-apk:
     BASE_URL: https://git.it-sec.medien.hs-duesseldorf.de
     PROJECT: 76
     STAGE: build
+    JOB_NAME: build-android
