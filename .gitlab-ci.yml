@@ -10,7 +10,7 @@ generate-android-apk:
   script: |
     apt-get update
     apt-get -y install jq
-    curl -O https://gist.github.com/geigi/caad0773f1e7d798de9e1ecf6e00df2d/raw/ea1ebc1ddbb618e6b34e68f6471b4ab6ba89a362/get-last-successful-build-artifact.sh
+    curl -O https://gist.githubusercontent.com/geigi/caad0773f1e7d798de9e1ecf6e00df2d/raw/ea1ebc1ddbb618e6b34e68f6471b4ab6ba89a362/get-last-successful-build-artifact.sh
     chmod +x get-last-successful-build-artifact.sh
     ./get-last-successful-build-artifact.sh
     ls -ahl
