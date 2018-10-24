@@ -8,6 +8,7 @@ generate-android-apk:
   image: jangrewe/gitlab-ci-android
   <<: *android_before_script
   script: |
+    apt-get update
     apt-get install jq
     curl -O https://gist.github.com/geigi/caad0773f1e7d798de9e1ecf6e00df2d/raw/3a55611ff8544802e8b89262c1c64c119157ef21/get-last-successful-build-artifact.sh
     chmod +x get-last-successful-build-artifact.sh
