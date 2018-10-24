@@ -10,10 +10,15 @@ generate-android-apk:
   script: |
     apt-get update
     apt-get -y install jq
-    curl -O https://gist.githubusercontent.com/geigi/caad0773f1e7d798de9e1ecf6e00df2d/raw/acc796f564f80dae3750c122040ec3c4c86939aa/get-last-successful-build-artifact.sh
+    curl -O https://gist.githubusercontent.com/geigi/caad0773f1e7d798de9e1ecf6e00df2d/raw/5d3049746bd72b8adeed904f7864d68738147277/get-last-successful-build-artifact.sh
     chmod +x get-last-successful-build-artifact.sh
     ./get-last-successful-build-artifact.sh
     ls -ahl
+    unzip artifacts.zip
+    rm -rf Mods/*/Linux
+    rm -rf Mods/*/OSX
+    rm -rf Mods/*/Windows
+    cp Mods app/src/main/assets/
     ./gradlew assembleRelease
     ls -ahl
     find . -name '*.apk'
