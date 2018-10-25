@@ -24,11 +24,12 @@ generate-android-apk:
     rm ./storefile
     ls -ahl
     find . -name '*.apk'
+    cp ./app/build/outputs/apk/release/app-release.apk ./Wth.ExampleMod.apk
   # retry because sometimes checkingout artifacts fails
   retry: 2
   artifacts:
     paths:
-    - ./app/build/outputs/apk/release/*.apk
+    - ./Wth.ExampleMod.apk
     expire_in: 1 week
   variables:
     BUILD_TARGET: Android
