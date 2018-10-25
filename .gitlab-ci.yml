@@ -19,7 +19,9 @@ generate-android-apk:
     rm -rf Mods/*/OSX
     rm -rf Mods/*/Windows
     cp -R Mods app/src/main/assets/
-    ./gradlew assembleRelease
+    echo "${ANDROID_STOREFILE}" | base64 -D > ./storefile
+    ./gradlew assembleRelease -Pandroid.injected.signing.store.file=./storefile -Pandroid.injected.signing.store.password=$ANDROID_STOREPW -Pandroid.injected.signing.key.alias=$ANDROID_KALIAS -Pandroid.injected.signing.key.password=$ANDROID_KPW
+    rm ./storefile
     ls -ahl
     find . -name '*.apk'
   # retry because sometimes checkingout artifacts fails
