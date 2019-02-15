@@ -33,6 +33,6 @@ generate-android-apk:
   variables:
     BUILD_TARGET: Android
     BASE_URL: https://projectbase.medien.hs-duesseldorf.de
-    PROJECT: 241
+    PROJECT: 240
     STAGE: build
-    JOB_NAME: build-android
+    JOB_NAME: build
