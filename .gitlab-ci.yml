@@ -32,7 +32,7 @@ generate-android-apk:
     expire_in: 1 week
   variables:
     BUILD_TARGET: Android
-    BASE_URL: https://git.it-sec.medien.hs-duesseldorf.de
-    PROJECT: 76
+    BASE_URL: https://projectbase.medien.hs-duesseldorf.de
+    PROJECT: 241
     STAGE: build
     JOB_NAME: build-android
