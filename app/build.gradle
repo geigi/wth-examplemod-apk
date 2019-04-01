@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "wth.hsd.de.wth_example_mod_apk"
+        applicationId "com.github.geigi.wth_example_mod_apk"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1

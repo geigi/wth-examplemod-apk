@@ -1,4 +1,4 @@
-package wth.hsd.de.wth_example_mod_apk;
+package com.github.geigi.wth_example_mod_apk;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("wth.hsd.de.wth_example_mod_apk", appContext.getPackageName());
+        assertEquals("com.github.geigi.wth_example_mod_apk", appContext.getPackageName());
     }
 }

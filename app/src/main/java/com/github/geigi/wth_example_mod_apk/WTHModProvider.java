@@ -1,4 +1,4 @@
-package wth.hsd.de.wth_example_mod_apk;
+package com.github.geigi.wth_example_mod_apk;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
